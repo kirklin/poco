@@ -1,0 +1,73 @@
+import type { Metadata } from "next";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { getMessages, setRequestLocale } from "next-intl/server";
+import { Inter } from "next/font/google";
+import { notFound } from "next/navigation";
+import * as React from "react";
+import Analytics from "~/components/Analytics";
+import { ThemeProvider } from "~/components/theme-provider";
+import { Toaster } from "~/components/ui/sonner";
+import { routing } from "~/lib/i18n/navigation";
+import { getBaseUrl } from "~/lib/url";
+import { cn, createAlternates } from "~/lib/utils";
+import "~/styles/global.css";
+
+const inter = Inter({ subsets: ["latin"] });
+
+type Params = Promise<{ locale: string }>;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Params;
+}): Promise<Metadata> {
+  // 确保params已经被解析
+  const { locale } = await params;
+
+  return {
+    title: "Boot Next.js App",
+    metadataBase: new URL(getBaseUrl()),
+    alternates: createAlternates("/", locale),
+  };
+}
+
+export function generateStaticParams() {
+  return routing.locales.map(locale => ({ locale }));
+}
+export default async function RootLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  // Ensure that the incoming `locale` is valid
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
+  setRequestLocale(locale);
+
+  const messages = await getMessages();
+
+  return (
+    // suppressHydrationWarning用于防止主题切换时服务端和客户端渲染不匹配导致的水合错误
+    <html lang={locale} suppressHydrationWarning>
+      <body className={cn(inter.className, "antialiased")}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            {children}
+          </NextIntlClientProvider>
+        </ThemeProvider>
+        <Analytics />
+        <Toaster />
+      </body>
+    </html>
+  );
+}
