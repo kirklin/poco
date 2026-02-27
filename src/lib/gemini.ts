@@ -1,6 +1,8 @@
+"use server";
+
 import { GoogleGenAI, Type } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.NEXT_PUBLIC_GEMINI_API_KEY });
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 export async function analyzeGenesisImage(base64Data: string, mimeType: string) {
   const response = await ai.models.generateContent({

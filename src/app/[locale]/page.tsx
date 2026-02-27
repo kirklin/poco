@@ -201,17 +201,18 @@ export default function Home() {
               <div className="absolute inset-0 bg-indigo-500 blur-[100px] opacity-20 rounded-full"></div>
               <Sparkles className="w-20 h-20 mx-auto text-indigo-400 mb-6" />
               <h1 className="text-5xl font-bold tracking-tighter mb-4 bg-gradient-to-br from-white to-zinc-500 bg-clip-text text-transparent">
-                Poco
+                POCO
               </h1>
               <p className="text-zinc-400 text-lg">
-                扫描现实世界的物品，孵化并变异出你独一无二的数字宠物。
+                在这个世界里，你拍下的每一张照片，都是生命的种子。<br />
+                将现实世界变成神奇孵化场，孕育出独一无二的数字宠物吧！
               </p>
             </div>
             <button
               onClick={() => setGameState("genesis")}
               className="px-8 py-4 bg-white text-black rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-[0_0_40px_rgba(255,255,255,0.2)]"
             >
-              开始孵化
+              寻找第一粒种子
             </button>
           </motion.div>
         )}
@@ -282,26 +283,26 @@ export default function Home() {
               >
                 {embryoSVG
                   ? (
-                      <div
-                        className="w-full h-full text-black [&>svg]:w-full [&>svg]:h-full [&>svg]:fill-current"
-                        dangerouslySetInnerHTML={{ __html: embryoSVG }}
-                      />
-                    )
+                    <div
+                      className="w-full h-full text-black [&>svg]:w-full [&>svg]:h-full [&>svg]:fill-current"
+                      dangerouslySetInnerHTML={{ __html: embryoSVG }}
+                    />
+                  )
                   : (
-                      <div
-                        className="bg-black w-40 h-40 rounded-full blur-md transition-all duration-1000"
-                        style={{
-                          borderRadius: mutations.length === 0
-                            ? "50%"
-                            : mutations.length === 1
-                              ? "40% 60% 70% 30% / 40% 50% 60% 50%"
-                              : mutations.length === 2
-                                ? "30% 70% 70% 30% / 30% 30% 70% 70%"
-                                : "20% 80% 20% 80% / 80% 20% 80% 20%",
-                        }}
-                      >
-                      </div>
-                    )}
+                    <div
+                      className="bg-black w-40 h-40 rounded-full blur-md transition-all duration-1000"
+                      style={{
+                        borderRadius: mutations.length === 0
+                          ? "50%"
+                          : mutations.length === 1
+                            ? "40% 60% 70% 30% / 40% 50% 60% 50%"
+                            : mutations.length === 2
+                              ? "30% 70% 70% 30% / 30% 30% 70% 70%"
+                              : "20% 80% 20% 80% / 80% 20% 80% 20%",
+                      }}
+                    >
+                    </div>
+                  )}
               </motion.div>
 
               {/* Environment Indicators */}
@@ -335,18 +336,18 @@ export default function Home() {
                     </div>
                     {task.completed
                       ? (
-                          <div className="bg-indigo-500/20 text-indigo-400 p-1.5 rounded-full">
-                            <Zap className="w-4 h-4" />
-                          </div>
-                        )
+                        <div className="bg-indigo-500/20 text-indigo-400 p-1.5 rounded-full">
+                          <Zap className="w-4 h-4" />
+                        </div>
+                      )
                       : (
-                          <button
-                            onClick={() => setActiveTaskId(task.id)}
-                            className="bg-zinc-800 hover:bg-zinc-700 text-white p-2 rounded-lg transition-colors"
-                          >
-                            <Camera className="w-4 h-4" />
-                          </button>
-                        )}
+                        <button
+                          onClick={() => setActiveTaskId(task.id)}
+                          className="bg-zinc-800 hover:bg-zinc-700 text-white p-2 rounded-lg transition-colors"
+                        >
+                          <Camera className="w-4 h-4" />
+                        </button>
+                      )}
                   </div>
                   {task.mutationEffect && (
                     <p className="text-xs text-indigo-400 italic mt-2 border-t border-indigo-500/20 pt-2">
