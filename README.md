@@ -1,38 +1,49 @@
-# Boot Next.js
+## 📷 POCO
 
-This is a [Next.js](https://nextjs.org/) project
+**在这个世界里，你拍下的每一张照片，都是生命的种子。**
 
-## Getting Started
+---
 
-First, run the development server:
+### ✨ 什么是 POCO？
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+POCO 是一款将**现实世界**变成**神奇孵化场**的 AI 陪伴伙伴。
+在这里，没有一成不变的养成路线。你身边的毛线球、桌上的马克杯、甚至是窗外的一场大雨，都会成为塑造 POCO 的奇妙养料。拿起相机，看看你的生活能孕育出什么样的独特惊喜吧！
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 🌟 核心玩法：大自然是最好的造型师
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+* **第一步：捕捉第一道“灵感”** 📸
+看中了一个毛茸茸的毛线球？还是路边一颗冷冰冰的石头？按下快门，AI 将瞬间读取它的“性格”。第一个物体将决定你小伙伴的雏形——是柔软温顺，还是坚硬有个性？
+* **第二步：充满好奇的“寻宝大冒险”** 🔍
+小家伙饿了，而且它的胃口有点特别！如果它觉得“太软了”，可能会向你讨要一点“金属的坚硬”。去家里或街道上找找看吧，每一次投喂，它的身体都会发生不可思议的变化，不到最后，谁也不知道它会长成什么样！
+* **第三步：借一点大自然的力量** ☁️
+破壳而出的瞬间，现实世界会送上一份“最终大礼”。是午夜的静谧，还是午后的暖阳？是冬天的寒冷，还是雨天的潮湿？当地的实时天气与时间将注入灵魂，赋予它独一无二的色彩与属性。
+* **第四步：惊喜（或者是小惊吓？）破壳！** 🎉
+最期待的时刻到了！你会收获一只软萌的像素宠物，还是……一只因为“营养过剩”而产生的、大智若愚的呆萌怪兽？15% 的奇妙变异概率，让每一次孵化都像拆盲盒一样心跳加速！
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+### 🌈 游戏特色
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* **像素美学：** 怀旧而温暖的像素曲风，每一只宠物都是独一无二的艺术品。
+* **打破次元壁：** 你的房间、你的城市，就是最棒的游戏地图。
+* **意想不到的幽默：** 并不是所有进化都完美无缺，那些“基因跑偏”的小废物，可能才是最可爱的伙伴。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+**准备好了吗？快去寻找你的第一粒“种子”吧！**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## ⚙️ 安装与运行步骤
+
+1. 克隆项目到本地：
+   `git clone https://github.com/kirklin/poco.git`
+2. 进入项目目录并安装依赖：
+   `cd poco`
+   `pnpm install`
+3. 配置环境变量：
+   将 `.env.example` 重命名为 `.env`，并填入您的 AI 接口 Key 和 Weather API Key。
+4. 启动前端/本地演示：
+   `pnpm start`
